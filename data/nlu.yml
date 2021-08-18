@@ -1,0 +1,198 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: set_working_env
+  examples: |
+    - Set Working Project Key
+    - Lets Add Working Project Key
+    - Let Add A New Working Project Key
+
+
+- intent: login_user
+  examples: |
+    - Could You Login Me
+    - Login My Account
+    - login
+
+
+
+
+- intent: show_project
+  examples: |
+    - show project
+    - show me my project
+    - show me project
+    - my projects
+    - what is my projects
+    - list my projects
+
+
+
+- intent: check_login
+  examples: |
+    - check is am i login
+
+
+
+
+
+
+
+- intent: show_my_issue
+  examples: |
+    - please show my issues
+    - can share me my issue
+    - i want to know my Projects  issues
+
+
+- intent: create_a_issue
+  examples: |
+    - I Want To Create New Issue
+    - can you create a new issue
+    - can you add a new issue
+    - lets Create a New issue
+    - Could You Create A New Issue For Me
+
+
+
+
+- intent: delete_issue
+  examples: |
+    - i want to delete a issue
+    - can you delete a issue
+    - delete issue
+    - lets delete issue
+    - could you delete a issue for me
+    - issue delete
+    - delete a issue for me
+    - deleting a issue
+
+
+
+#- intent: update_issue
+#  examples: |
+#    - i want to update a issue
+#    - can you update a issue
+#    - update issue
+#    - lets update issue
+#    - could you update a issue for me
+#    - issue update
+#    - update a issue for me
+#    - updating a issue
+
+
+
+- intent: cancel
+  examples: |
+    - cancel
+    - cancel the process
+    - cancel it
+
+
+- intent: help
+  examples: |
+    - i need help
+    - what can you do for me
+    - can you help me
+
+
+
+
+
+#
+#
+#- intent: inform_description
+#  examples: |
+#    - The Description Is
+#    - descrition is

@@ -1,0 +1,88 @@
+version: "2.0"
+
+stories:
+
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: cancel path
+  steps:
+  - intent: cancel
+  - action: action_cancel
+
+
+- story: help  path
+  steps:
+  - intent: help
+  - action: action_help
+
+
+
+
+
+- story: login check path
+  steps:
+  - intent: check_login
+  - action: action_check_login
+
+#- story: login path
+#  steps:
+#  - intent: login_user
+#  - action: utter_login_user
+#  - intent: user_mail
+#  - action: action_user_mail
+#  - intent: user_password
+#  - action: action_user_password
+
+
+
+
+
+
+
+- story: show project  path
+  steps:
+  - intent: show_project
+  - action: action_show_project
+  - intent: show_my_issue
+  - action: action_show_my_issue
+
+
+
+#- story: Create Isssue From path
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: create_a_issue
+#  - action: issue_creation_from
+#  - active_loop: issue_creation_froms
+#  - active_loop: issue_creation_froms
+#  - active_loop: null
+#  - action: utter_create_issuse_submited

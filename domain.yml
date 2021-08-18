@@ -1,0 +1,134 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - login_user
+  - check_login
+  - show_project
+  - show_my_issue
+  - set_working_env
+  - create_a_issue
+  - cancel
+  - help
+  - delete_issue
+
+
+
+actions:
+  - action_check_login
+  - action_show_project
+  - action_show_my_issue
+  - utter_slots_values
+  - utter_create_issuse_submited
+  - validate_issue_creation_from
+  - action_ask_issue_summary
+  - validate_login_user_form
+  - action_ask_project_key
+  - validate_project_key_form
+  - action_submit_issue_creation
+  - action_help
+  - action_cancel
+  - validate_issue_deletion_from
+  - action_ask_issue_key_for_delete
+
+
+forms:
+  project_key_form:
+    project_key:
+      - type: from_text
+
+
+  login_user_form:
+    email:
+      - type: from_text
+    api_key:
+      - type: from_text
+
+  issue_creation_from:
+    issue_summary:
+      - type: from_text
+    issue_description:
+      - type: from_text
+
+  issue_deletion_from:
+    issue_key_for_delete:
+      - type: from_text
+
+
+
+
+entities:
+  - email
+  - api_key
+  - project_key
+  - issue_summary
+  - issue_description
+  - issue_key_for_delete
+
+slots:
+  issue_key_for_delete:
+    type: text
+  email:
+    type: text
+  api_key:
+    type: text
+  project_key:
+    type: text
+  issue_summary:
+    type: text
+  issue_description:
+    type: text
+
+
+
+
+responses:
+  utter_login_user_form_submited:
+  - text: "i Got Your Details Validating"
+
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_email:
+  - text: "What Is Your Email ?"
+    buttons:
+      - title: "cancel process"
+        payload: "cancel_form"
+
+  utter_ask_api_key:
+    - text: "What Is Your Api Key ??"
+
+#  utter_delete_issue:
+#    - text: "Okay Am ready To Delete  a Issue"
+
+
+
+  utter_ask_issue_description:
+    - text: "Enter The Issue Description"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

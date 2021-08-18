@@ -1,0 +1,102 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+
+
+
+
+- rule: Activate delete issue form
+  steps:
+  - intent: delete_issue
+  - action: issue_deletion_from
+  - active_loop: issue_deletion_from
+
+
+- rule: Submit issue deletion from  form
+  condition:
+    - active_loop: issue_deletion_from
+  steps:
+  - action: issue_deletion_from
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+
+
+
+
+
+
+
+
+- rule: Activate Project Key form
+  steps:
+  - intent: set_working_env
+  - action: project_key_form
+  - active_loop: project_key_form
+
+
+- rule: Submit Project Key form
+  condition:
+    - active_loop: project_key_form
+  steps:
+  - action: project_key_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+
+
+
+
+
+
+- rule: Activate Login form
+  steps:
+  - intent: login_user
+  - action: login_user_form
+  - active_loop: login_user_form
+
+
+- rule: Submit login user form
+  condition:
+    - active_loop: login_user_form
+  steps:
+  - action: login_user_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+
+
+
+
+
+- rule: Activate form
+  steps:
+  - intent: create_a_issue
+  - action: issue_creation_from
+  - active_loop: issue_creation_from
+
+
+- rule: Submit form
+  condition:
+    - active_loop: issue_creation_from
+  steps:
+  - action: issue_creation_from
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_submit_issue_creation
